@@ -18,7 +18,7 @@ function PartialProviderFactory( ) {
       function HitmandsPartial(raw) {
          this.src = raw.src;
          this.id = raw.id;
-         this.classes(raw.classes);
+         this.classes(raw.classes || []);
       }
 
 

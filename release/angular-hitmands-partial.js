@@ -4,7 +4,7 @@
  * @Link: https://github.com/hitmands/angular-hitmands-partial
  * @License: MIT
  * @Date: 2015-02-04
- * @Version: 0.0.1
+ * @Version: 1.0.0
 ***/
 
 (function(window, angular) {
@@ -22,7 +22,7 @@
          function HitmandsPartial(raw) {
             this.src = raw.src;
             this.id = raw.id;
-            this.classes(raw.classes);
+            this.classes(raw.classes || []);
          }
          HitmandsPartial.prototype.classes = function(newClasses) {
             var classes = [ "hm-partial" ];
@@ -60,6 +60,7 @@
       return {
          "scope": !1,
          "restrict": "E",
+         "priority": 1e7,
          "templateUrl": function(tEl, tAttrs) {
             var _id = tEl.attr("data-hm-partial-id") || tEl.attr("id"), partial = PartialService.get(_id);
             try {

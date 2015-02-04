@@ -3,6 +3,7 @@ function PartialDirectiveFactory(PartialService, $exceptionHandler) {
    return {
       scope: false,
       restrict: 'E',
+      priority: 10000000,
       templateUrl: function(tEl, tAttrs) {
          var _id = tEl.attr('data-hm-partial-id') || tEl.attr('id');
          var partial = PartialService.get( _id );
