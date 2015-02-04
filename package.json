@@ -1,6 +1,6 @@
 {
   "name": "angular-hitmands-partial",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/hitmands/angular-hitmands-partial",
   "main": "./release/angular-hitmands-partial.js",
   "repository": {

@@ -26,6 +26,7 @@
          }
          HitmandsPartial.prototype.classes = function(newClasses) {
             var classes = [ "hm-partial" ];
+            angular.isString(newClasses) && (newClasses = [ newClasses ]);
             try {
                classes.push("hm-partial-" + this.id);
             } catch (e) {}
@@ -44,9 +45,6 @@
          }
          angular.isObject(newPartial) && !findPartial(newPartial.id) && partials.push(new HitmandsPartial(newPartial));
          return this;
-      };
-      this.get = function(idOrSlug) {
-         return angular.isString(idOrSlug) ? findPartial(idOrSlug) : partials;
       };
       this.$get = function() {
          return {

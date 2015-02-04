@@ -24,6 +24,9 @@ function PartialProviderFactory( ) {
 
       HitmandsPartial.prototype.classes = function(newClasses) {
          var classes = ['hm-partial'];
+         if(angular.isString(newClasses)) {
+            newClasses = [newClasses];
+         }
 
          try {
             classes.push('hm-partial-' + this.id);
