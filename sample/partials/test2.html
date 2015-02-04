@@ -1,0 +1,18 @@
+<h1>PARTIAL 2</h1>
+<pre ng-bind="test.fields | json">
+</pre>
+
+
+<form style="max-width: 400px;">
+    <fieldset>
+        <legend>Test on ngModel</legend>
+        <div class="">
+            <label for="email">Email</label>
+            <input style="width: 100%; display: block;" type="email" ng-model="test.fields.email" id="email"/>
+        </div>
+        <div class="">
+            <label for="name">Name</label>
+            <input style="width: 100%; display: block;" type="text" ng-model="test.fields.name" id="name"/>
+        </div>
+    </fieldset>
+</form>
