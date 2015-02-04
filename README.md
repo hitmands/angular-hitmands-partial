@@ -107,7 +107,7 @@ angular
     <!--Use the id of the registered partial object-->
     <hm-partial id="test"></hm-partial>
 
-grunt    <hm-partial data-hm-partial-id="test2"></hm-partial>
+    <hm-partial data-hm-partial-id="test2"></hm-partial>
 
 </body>
 ```
