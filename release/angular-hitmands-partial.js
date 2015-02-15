@@ -3,7 +3,7 @@
  * @Authors: Giuseppe Mandato <gius.mand.developer@gmail.com>
  * @Link: https://github.com/hitmands/angular-hitmands-partial
  * @License: MIT
- * @Date: 2015-02-04
+ * @Date: 2015-02-15
  * @Version: 1.0.0
 ***/
 
@@ -14,7 +14,10 @@
    function PartialProviderFactory() {
       function findPartial(idOrUrl) {
          for (var res = null, i = 0, len = partials.length; len > i; i++) {
-            (partials[i].id === idOrUrl || partials[i].src === idOrUrl) && (res = partials[i]);
+            if (partials[i].id === idOrUrl || partials[i].src === idOrUrl) {
+               res = partials[i];
+               break;
+            }
          }
          return res;
       }
@@ -66,7 +69,7 @@
             try {
                tAttrs.$addClass(partial.classes);
             } catch (e) {}
-            if (partial.hasOwnProperty("src") && partial.src.length) {
+            if (angular.isObject(partial) && partial.hasOwnProperty("src") && partial.src.length) {
                try {
                   tEl.attr("data-hm-partial-src", partial.src);
                } catch (e) {}

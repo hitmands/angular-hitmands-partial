@@ -12,7 +12,7 @@ function PartialDirectiveFactory(PartialService, $exceptionHandler) {
             tAttrs.$addClass(partial.classes);
          } catch (e) {}
 
-         if(!partial.hasOwnProperty('src') || !partial.src.length) {
+         if(!angular.isObject(partial) || !partial.hasOwnProperty('src') || !partial.src.length) {
             $exceptionHandler('hitmands.partial, Partial Not Correctly Registered');
             return;
          }
