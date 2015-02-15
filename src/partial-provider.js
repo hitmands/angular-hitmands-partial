@@ -43,7 +43,7 @@ function PartialProviderFactory( ) {
    }).call(this);
 
    this.register = function PartialProviderRegisterPartial( newPartial ) {
-      if(isArray(newPartial)) {
+      if(angular.isArray(newPartial)) {
          for(var i = 0; i < newPartial.length; i++) {
             if(!findPartial(newPartial[i].id)) {
                partials.push( new HitmandsPartial(newPartial[i]) );
