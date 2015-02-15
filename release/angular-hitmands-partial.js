@@ -38,7 +38,7 @@
          return HitmandsPartial;
       }.call(this);
       this.register = function(newPartial) {
-         if (isArray(newPartial)) {
+         if (angular.isArray(newPartial)) {
             for (var i = 0; i < newPartial.length; i++) {
                findPartial(newPartial[i].id) || partials.push(new HitmandsPartial(newPartial[i]));
             }
